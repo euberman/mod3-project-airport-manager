@@ -1,0 +1,2 @@
+class ServiceItemsController < ApplicationController
+end
