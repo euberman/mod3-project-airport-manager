@@ -1,0 +1,234 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCustomers (20201201175921)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "customers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20201201175921_create_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201201175921"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateServices (20201201180107)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "services" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20201201180107_create_services.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201201180107"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateServiceItems (20201201180330)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "service_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "workorder_id" integer, "service_id" integer, "completed" boolean DEFAULT 0, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_3890c3bfb3"
+FOREIGN KEY ("workorder_id")
+  REFERENCES "workorders" ("id")
+, CONSTRAINT "fk_rails_79661db20c"
+FOREIGN KEY ("service_id")
+  REFERENCES "services" ("id")
+)[0m
+  ↳ db/migrate/20201201180330_create_service_items.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_service_items_on_workorder_id" ON "service_items" ("workorder_id")[0m
+  ↳ db/migrate/20201201180330_create_service_items.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_service_items_on_service_id" ON "service_items" ("service_id")[0m
+  ↳ db/migrate/20201201180330_create_service_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201201180330"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateWorkorders (20201201180623)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "workorders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" datetime, "customer_id" integer, "aircraft_id" integer, "completed" boolean DEFAULT 0, "work_status" varchar DEFAULT 'scheduled', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_0eed3ae87f"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+, CONSTRAINT "fk_rails_aef94869ff"
+FOREIGN KEY ("aircraft_id")
+  REFERENCES "aircrafts" ("id")
+)[0m
+  ↳ db/migrate/20201201180623_create_workorders.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_workorders_on_customer_id" ON "workorders" ("customer_id")[0m
+  ↳ db/migrate/20201201180623_create_workorders.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_workorders_on_aircraft_id" ON "workorders" ("aircraft_id")[0m
+  ↳ db/migrate/20201201180623_create_workorders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201201180623"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAircrafts (20201201180828)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "aircrafts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "model" varchar, "customer_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_37b885faed"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+)[0m
+  ↳ db/migrate/20201201180828_create_aircrafts.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_aircrafts_on_customer_id" ON "aircrafts" ("customer_id")[0m
+  ↳ db/migrate/20201201180828_create_aircrafts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201201180828"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-02 02:14:37.890064"], ["updated_at", "2020-12-02 02:14:37.890064"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCustomer Create (0.4ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Joey Thomas"], ["created_at", "2020-12-02 02:14:46.339173"], ["updated_at", "2020-12-02 02:14:46.339173"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tom Hudson"], ["created_at", "2020-12-02 02:14:46.341969"], ["updated_at", "2020-12-02 02:14:46.341969"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mark Cuban"], ["created_at", "2020-12-02 02:14:46.344370"], ["updated_at", "2020-12-02 02:14:46.344370"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fuel Service"], ["description", "Aircraft is refuled with jet fuel"], ["created_at", "2020-12-02 02:14:46.352199"], ["updated_at", "2020-12-02 02:14:46.352199"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mService Create (0.4ms)[0m  [1m[32mINSERT INTO "services" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Towing Service"], ["description", "Towing service to hangar from ramp and from hangar to ramp"], ["created_at", "2020-12-02 02:14:46.363621"], ["updated_at", "2020-12-02 02:14:46.363621"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Overnight Hangar"], ["description", "Overnight hangar rental for aircraft"], ["created_at", "2020-12-02 02:14:46.365876"], ["updated_at", "2020-12-02 02:14:46.365876"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (1.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lav Service"], ["description", "cleaning toilet waist from aircraft"], ["created_at", "2020-12-02 02:14:46.369199"], ["updated_at", "2020-12-02 02:14:46.369199"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mService Create (0.3ms)[0m  [1m[32mINSERT INTO "services" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Food Catering"], ["description", "Order food to be ready when they depart"], ["created_at", "2020-12-02 02:14:46.371904"], ["updated_at", "2020-12-02 02:14:46.371904"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mAircraft Create (0.4ms)[0m  [1m[32mINSERT INTO "aircrafts" ("model", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["model", "Gulfstream IV, 450"], ["customer_id", 1], ["created_at", "2020-12-02 02:14:46.401152"], ["updated_at", "2020-12-02 02:14:46.401152"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mAircraft Create (0.3ms)[0m  [1m[32mINSERT INTO "aircrafts" ("model", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["model", "Challenger 600"], ["customer_id", 2], ["created_at", "2020-12-02 02:14:46.405610"], ["updated_at", "2020-12-02 02:14:46.405610"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mAircraft Create (0.3ms)[0m  [1m[32mINSERT INTO "aircrafts" ("model", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["model", "Gulfstream V, 550"], ["customer_id", 3], ["created_at", "2020-12-02 02:14:46.408547"], ["updated_at", "2020-12-02 02:14:46.408547"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mAircraft Create (0.3ms)[0m  [1m[32mINSERT INTO "aircrafts" ("model", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["model", "Citation 560 XL"], ["customer_id", 3], ["created_at", "2020-12-02 02:14:46.412435"], ["updated_at", "2020-12-02 02:14:46.412435"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mWorkorder Create (0.4ms)[0m  [1m[32mINSERT INTO "workorders" ("date", "customer_id", "aircraft_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["date", "2020-12-01 00:00:00"], ["customer_id", 1], ["aircraft_id", 1], ["created_at", "2020-12-02 02:14:46.432867"], ["updated_at", "2020-12-02 02:14:46.432867"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[36mWorkorder Create (0.3ms)[0m  [1m[32mINSERT INTO "workorders" ("date", "customer_id", "aircraft_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["date", "2020-12-03 00:00:00"], ["customer_id", 2], ["aircraft_id", 2], ["created_at", "2020-12-02 02:14:46.435557"], ["updated_at", "2020-12-02 02:14:46.435557"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[36mWorkorder Create (0.3ms)[0m  [1m[32mINSERT INTO "workorders" ("date", "customer_id", "aircraft_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["date", "2020-12-05 00:00:00"], ["customer_id", 3], ["aircraft_id", 3], ["created_at", "2020-12-02 02:14:46.437786"], ["updated_at", "2020-12-02 02:14:46.437786"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mWorkorder Create (0.3ms)[0m  [1m[32mINSERT INTO "workorders" ("date", "customer_id", "aircraft_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["date", "2020-12-07 00:00:00"], ["customer_id", 3], ["aircraft_id", 4], ["created_at", "2020-12-02 02:14:46.439971"], ["updated_at", "2020-12-02 02:14:46.439971"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[36mServiceItem Create (0.3ms)[0m  [1m[32mINSERT INTO "service_items" ("workorder_id", "service_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["workorder_id", 1], ["service_id", 1], ["created_at", "2020-12-02 02:14:46.448993"], ["updated_at", "2020-12-02 02:14:46.448993"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[36mServiceItem Create (0.3ms)[0m  [1m[32mINSERT INTO "service_items" ("workorder_id", "service_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["workorder_id", 1], ["service_id", 2], ["created_at", "2020-12-02 02:14:46.456788"], ["updated_at", "2020-12-02 02:14:46.456788"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mServiceItem Create (0.3ms)[0m  [1m[32mINSERT INTO "service_items" ("workorder_id", "service_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["workorder_id", 2], ["service_id", 4], ["created_at", "2020-12-02 02:14:46.458787"], ["updated_at", "2020-12-02 02:14:46.458787"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[36mServiceItem Create (0.3ms)[0m  [1m[32mINSERT INTO "service_items" ("workorder_id", "service_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["workorder_id", 2], ["service_id", 5], ["created_at", "2020-12-02 02:14:46.460578"], ["updated_at", "2020-12-02 02:14:46.460578"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mServiceItem Create (0.3ms)[0m  [1m[32mINSERT INTO "service_items" ("workorder_id", "service_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["workorder_id", 3], ["service_id", 3], ["created_at", "2020-12-02 02:14:46.462497"], ["updated_at", "2020-12-02 02:14:46.462497"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mServiceItem Create (0.3ms)[0m  [1m[32mINSERT INTO "service_items" ("workorder_id", "service_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["workorder_id", 3], ["service_id", 1], ["created_at", "2020-12-02 02:14:46.464495"], ["updated_at", "2020-12-02 02:14:46.464495"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mServiceItem Create (0.3ms)[0m  [1m[32mINSERT INTO "service_items" ("workorder_id", "service_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["workorder_id", 4], ["service_id", 2], ["created_at", "2020-12-02 02:14:46.467298"], ["updated_at", "2020-12-02 02:14:46.467298"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mServiceItem Create (0.3ms)[0m  [1m[32mINSERT INTO "service_items" ("workorder_id", "service_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["workorder_id", 4], ["service_id", 4], ["created_at", "2020-12-02 02:14:46.469817"], ["updated_at", "2020-12-02 02:14:46.469817"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
