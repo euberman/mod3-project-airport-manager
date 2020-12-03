@@ -1,9 +1,9 @@
 class CustomersController < ApplicationController
 
   def index
-    customers = Customers.all
+    customers = Customer.all
     if customers
-      render json: customers, include: [:name, :aircrafts], except: [:updated_at]
+      render json: CustomerSerializer.new(customers)
     else 
       render json: {message: 'No customers found'}
     end
@@ -12,7 +12,7 @@ class CustomersController < ApplicationController
   def show
     customer = Customer.find_by(id: params[:id])
     if customer
-      render json: customer, include: [:name, :aircrafts], except: [:updated_at]
+      render json: CustomerSerializer.new(customer)
     else 
       render json: {message: 'No customer found with that id'}
     end

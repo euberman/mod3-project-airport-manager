@@ -3,18 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>FBO Workorders</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="my_styles.css">
   </head>
   <body>
-    <header>
-      <h2>FBO Workorder Manager</h2>
-    </header>
-
-    <main>
-      
+    <main class='wrapper'>
+      <header>
+        <h1>FBO Workorder Manager</h1>
+        <nav>
+          <ul id='navList' class='row note'>
+            <li id='dashboardLink' >Dashboard</li>
+            <li id='workordersLink'>Workorders</li>
+            <li id='servicesLink'>Services</li>
+            <li id='customersLink'>Customers</li>
+          </ul>
+        </nav>
+      </header>
+      <section class="row">
+        <div class="col-1 correct full-width"> These columns don't have horizontal space between them </div>
+        <div class="col-1 note full-width"> Useful if you want to create stuff that will take up the entire page </div>
+      </section>
     </main>
-
-    <footer></footer>
 
     <script src="./src/index.js"></script>
   </body>
