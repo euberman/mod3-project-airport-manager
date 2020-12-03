@@ -1,6 +1,8 @@
+/*
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:600");
 * {margin: 0; padding: 0; box-sizing: border-box; }
-html, body {height: 100%; background: #f1f1f1; color: #333; 
+*, *:before, *:after { box-sizing: inherit; }
+html, body {height: 100%; margin:40px; background: #f1f1f1; color: #333; 
   font: 16px/1 'Open Sans', sans-serif; }
 
 .wrapper { 
@@ -19,7 +21,6 @@ header { padding:10px;}
 }
 
 .row { display: flex; }
-/* .card {background:  } */
 
 [class*="col-"] {
 	min-height: 80px; text-align: center; 
@@ -50,19 +51,83 @@ p { font: 14px/1 'Open Sans', sans-serif; color: #777; }
 a {color: #333; text-decoration: none; }
 a:hover {text-decoration: underline;}
 
-/* Just so you can get an impression of what it looks like when the height changes without spamming the code with useless text. */
+
 .blank-col {min-height: 150px; max-height: 150px; }
 .sticky {font: 600 20px/1 'Open Sans', sans-serif; top: 0; position:fixed; width: 100%; max-height: 150px; }
-.no-back { background-color: #f1f1f1; /* make sure to change this to the background color */}
+.no-back { background-color: #f1f1f1; }
 
 .warn {background: #FFDB4D;}
 .note { background: #5CADFF;color: #fff; }
 .error { background: #FF5353; color: #fff; }
 .correct { background: #33D685; color: #fff; }
 .rounded {border-radius: 100px;}
-.back-img {/* Use on columns only! */ background-image: url(http://); height: 150px; background-size:cover; color: #fff; }
-
+*/
+.back-img { background-image: url(http://); height: 150px; background-size:cover; color: #fff; }/* Use on columns only! */
+/*
 .hidden-col {visibility: hidden;}
 .full-width { margin-bottom: 0; }
 .full-width:last-child { margin-bottom: 20px; }
 .space-off, .space-off:last-child {margin-bottom: 0; }
+*/
+
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 40px;
+  font-family: 'Open Sans', 'sans-serif';
+  background-color: #fff;
+  color: #444;
+}
+
+h1, p {
+  margin: 0 0 1em 0;
+}
+
+/* no grid support? */
+.sidebar {
+  float: left;
+  width: 19.1489%;
+}
+
+.content {
+  float: right;
+  width: 79.7872%;
+}
+
+/* make a grid */
+.wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 10px;
+}
+
+.wrapper > * {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  /* needed for the floated layout*/
+  margin-bottom: 10px;
+}
+
+.header, .footer {
+  grid-column: 1 / -1;
+  /* needed for the floated layout */
+  clear: both;
+}
+
+
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid) {
+  .wrapper > * {
+    width: auto;
+    margin: 0;
+  }
+}

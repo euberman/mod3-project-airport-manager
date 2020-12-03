@@ -16,6 +16,8 @@ pickle-email-*.html
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/fbo-workorder-backend/tmp/*
+/fbo-workorder-backend/tmp/cache/*
 
 .DS_Store
 
@@ -67,3 +69,4 @@ yarn-debug.log*
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+fbo-workorder-backend/tmp/cache/bootsnap-compile-cache/7f/9754e43eeac5d8

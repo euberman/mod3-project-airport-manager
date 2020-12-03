@@ -1,4 +1,4 @@
 class AircraftSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :model, :customer
 end

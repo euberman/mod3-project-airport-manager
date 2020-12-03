@@ -1,4 +1,4 @@
 class ServiceItemSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :service, :workorder_id, :completed
 end
