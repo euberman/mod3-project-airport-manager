@@ -22,12 +22,13 @@ html, body {
   overflow: hidden;
   text-transform: uppercase;
 }
+.row {display: flex;}
 header {
   background: linear-gradient(to bottom, #52719c, #0b3681);
   padding: 12px 20px;
   color: #fff;
 }
-
+.bg-blue {background:blue;}
 #navList {
   list-style: none;
 }
