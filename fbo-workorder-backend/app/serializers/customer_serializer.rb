@@ -1,4 +1,4 @@
 class CustomerSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name
+  attributes :name, :aircrafts
 end

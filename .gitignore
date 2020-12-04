@@ -13,6 +13,7 @@ pickle-email-*.html
 
 # Ignore all logfiles and tempfiles.
 /log/*
+/fbo-workorder-backend/log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
@@ -70,3 +71,4 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 fbo-workorder-backend/tmp/cache/bootsnap-compile-cache/7f/9754e43eeac5d8
+fbo-workorder-backend/log/development.log
