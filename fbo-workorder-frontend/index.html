@@ -4,25 +4,30 @@
     <meta charset="utf-8">
     <title>FBO Workorders</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="my_styles.css">
+    <link rel="stylesheet" href="assets/bulma-materia.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
   </head>
   <body>
     <main class='wrapper'>
       <header>
         <h1>FBO Workorder Manager</h1>
-        <nav>
-          <ul id='navList' class='row note'>
-            <li id='dashboardLink' >Dashboard</li>
-            <li id='workordersLink'>Workorders</li>
-            <li id='servicesLink'>Services</li>
-            <li id='customersLink'>Customers</li>
-          </ul>
+        <nav class="container">
+          <div class="bd-notification buttons are-medium">
+            <button class="button">Dashboard</button>
+            <button class="button">Workorders</button>
+            <button class="button">Services</button>
+            <button class="button">Customers</button>
+          </div>
         </nav>
       </header>
-      <section id='parentContainer' class="row">
-        <div class="col-12 correct"> These columns don't have horizontal space between them </div>
-        <div class="col-12 note"> Useful if you want to create stuff that will take up the entire page </div>
-      </section>
+      <div id='parentContainer' class="row">
+        <div class="columns is-mobile">
+          <div class="column is-info">1</div>
+          <div class="column is-info">2</div>
+          <div class="column is-info">3</div>
+          <div class="column is-info">4</div>
+        </div>
+      </div>
     </main>
 
     <script src="./src/index.js"></script>
