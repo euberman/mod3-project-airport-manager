@@ -25,75 +25,37 @@
 
             <!-- ------------------- MAIN COLUMNS CONTAINER ------------------- -->
             <div id="parent-columns" class="columns">
-                <!-- ------------------- ASIDE NAV ------------------- -->
+                <!-- ------------------- MAIN-COLUMN-LEFT ------------------- -->
                   <aside id="main-sidebar" class="column is-2 aside py-4 has-background-link-light has-text-link-dark">
                     <nav>
-                        <a id="navLink-dashboard" class="navbar-item is-active">Dashboard</a>
-                        <a id="navLink-dashboard" class="navbar-item">Workorders</a>
-                        <a id="navLink-dashboard" class="navbar-item">Services</a>
-                        <a id="navLink-customers" class="navbar-item">Customers</a>
+                        <a id="dashboardLink" class="navbar-item is-active">Dashboard</a>
+                        <a id="workordersLink" class="navbar-item">Workorders</a>
+                        <a id="servicesLink" class="navbar-item">Services</a>
+                        <a id="customersLink" class="navbar-item">Customers</a>
                     </nav>
                   </aside>
                   <!-- ------------------- MAIN-COLUMN-RIGHT ------------------- -->
                   <div id='main-container' class="column main py-4 has-background-grey-light">
+
+                        <!-- AREA FOR RENDERING-->
                         <!-- ~~~~~~~~~~~~~~~~ RIGHT-SUB-SECTION-1 ~~~~~~~~~~~~~~~~ -->
-                        <div class="level mt-2 mr-2 content-title">
-                              <div class="level-left">
-                                <div class="level-item">
-                                  <div class="title ">
-                                    <span>Dashboard</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="level-right">
-                                <div class="level-item">
-                                </div>
-                              </div>
-                        </div>
+                        <div class="level mt-2 mr-2 content-title"><div class="level-left"><div class="level-item title">Dashboard</div></div></div>
 
                         <!-- ~~~~~~~~~~~~~~~~ RIGHT-SUB-SECTION-2 ~~~~~~~~~~~~~~~~ -->
                         <div class="columns is-multiline">
-                              <div class="column">
-                                <div class="box notification is-primary">
-                                  <div class="heading">Top Seller Total</div>
-                                  <div class="title">56,950</div>
-                                </div>
-                              </div>
-                              <div class="column">
-                                <div class="box notification is-warning">
-                                  <div class="heading">Revenue / Expenses</div>
-                                  <div class="title">55% / 45%</div>
-                                </div>
-                              </div>
-                              <div class="column">
-                                <div class="box notification is-info">
-                                  <div class="heading">Feedback Activity</div>
-                                  <div class="title">78% ↑</div>
-                                </div>
-                              </div>
-                              <div class="column">
-                                <div class="box notification is-danger">
-                                  <div class="heading">Orders / Returns</div>
-                                  <div class="title">75% / 25%</div>
-                                </div>
-                              </div>    
-                        </div> <!--END SUB SECTION 2 -->
+                              <div class="column"><div class="box notification is-primary"><div class="heading">Top Seller Total</div><div class="title">56,950</div></div></div>
+                              <div class="column"><div class="box notification is-warning"><div class="heading">Revenue / Expenses</div><div class="title">55% / 45%</div></div></div>
+                              <div class="column"><div class="box notification is-info"><div class="heading">Feedback Activity</div><div class="title">78% ↑</div></div></div>
+                              <div class="column"><div class="box notification is-danger"><div class="heading">Orders / Returns</div><div class="title">75% / 25%</div></div></div>    
+                        </div> 
                         <!-- ~~~~~~~~~~~~~~~~ RIGHT-SUB-SECTION-3 ~~~~~~~~~~~~~~~~ -->
                         <div class="columns is-multiline">
-
-                              <div class="column is-6">
+                              <div class="column is-12">
                                 <article class="message is-dark">
-                                  <div class="message-header"> <p>Chart</p> </div>
+                                  <div class="message-header"> Chart </div>
                                   <div class="message-body" style="position: relative;"></div>
                                 </article>
                               </div>
-                              <div class="column is-6">
-                                <article class="message is-dark">
-                                  <div class="message-header"> <p>Chart</p> </div>
-                                  <div class="message-body" style="position: relative;"></div>
-                                </article>
-                              </div>
-
                         </div> <!--END SUB SECTION 3 -->
 
                   </div> <!-- END RIGHT SIDE COLUMN -->
