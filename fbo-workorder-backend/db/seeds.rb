@@ -5,6 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'date'
+
+Workorder.delete_all
+ServiceItem.delete_all
+Service.delete_all
+Customer.delete_all
+Aircraft.delete_all
 
 
 customer1 = Customer.create(name: 'Joey Thomas')
@@ -22,10 +29,11 @@ aircraft2 = Aircraft.create(model: 'Challenger 600', customer: customer2)
 aircraft3 = Aircraft.create(model: 'Gulfstream V, 550', customer: customer3)
 aircraft4 = Aircraft.create(model: 'Citation 560 XL', customer: customer3)
 
-date1 = Date.new(2020,12,1)
-date2 = Date.new(2020,12,3)
-date3 = Date.new(2020,12,5)
-date4 = Date.new(2020,12,7)
+today = Date.today
+date1 = today + 1
+date2 = today + 2
+date3 = today + 3
+date4 = today + 4
 
 workorder1 = Workorder.create(customer: customer1 , aircraft: aircraft1 , date: date1 )
 workorder2 = Workorder.create(customer: customer2 , aircraft: aircraft2 , date: date2 )

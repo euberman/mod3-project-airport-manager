@@ -1,5 +1,5 @@
 const BASE_URL = "http://localhost:3000"
-const _headers = { "Content-Type": "application/json", Accept: "application/json" } //'Access-Control-Allow-Origin', 
+const _headers = {"Access-Control-Allow-Origin":"http://localhost:8000/",  "Content-Type": "application/json", Accept: "application/json" } //'Access-Control-Allow-Origin', 
 let mainContainer;
 let activeWorkorder;
 // ========================================================================
@@ -15,11 +15,11 @@ function linkNavButtons(){
   const dashboardBtn = document.getElementById('dashboardLink')
     dashboardBtn.addEventListener('click', renderDashboard)
   const workordersBtn = document.getElementById('workordersLink')
-  workordersBtn.addEventListener('click', renderWorkorders)
+  workordersBtn.addEventListener('click', fetchWorkorders)
   const servicesBtn = document.getElementById('servicesLink')
-  servicesBtn.addEventListener('click', renderServices)
+  servicesBtn.addEventListener('click', fetchServices)
   const customersBtn = document.getElementById('customersLink')
-  customersBtn.addEventListener('click', renderCustomers)
+  customersBtn.addEventListener('click', fetchCustomers)
 }
 // ========================================================================
 // DASHBOARD
@@ -37,7 +37,7 @@ function renderDashboard(){
             <div class="column is-12">
               <article class="message is-dark">
                 <div class="message-header"> Dash </div>
-                <div class="message-body" style="position: relative;"></div>
+                <div id="messageBody" class="message-body" style="position: relative;"></div>
               </article>
             </div>
       </div>
@@ -47,24 +47,50 @@ function renderDashboard(){
 
 // ========================================================================
 // WORKORDERS
-function fectchWorkorders(){
-  fetch(`${BASE_URL}/workorders`, { method: "GET", headers: _headers})
+function fetchWorkorders(){
+  fetch(`${BASE_URL}/workorders`, { method: "GET", mode:"cors", headers: _headers})
     .then(resp => resp.json())
     .then(renderWorkorders)
 }
 function renderWorkorders(workorders){
-  parentContainer.innerHTML = "<ul class='row'></ul>";
-	workorders.forEach(workorder => renderWorkorder(workorder))
+  mainContainer.innerHTML = '';
+  const titleDiv = document.createElement('div')
+      titleDiv.className = 'level mt-2 mr-2 content-title'
+  const titleDivInner1 = document.createElement('div')
+  titleDiv.className = 'level-left'
+  const titleDivInner2 = document.createElement('div')
+  titleDiv.className = 'level-item title'
+
+  let titleName = 'Workorders'
+
+  mainContainer.innerHTML = `
+      <div class="level mt-2 mr-2 content-title"><div class="level-left"><div class="level-item title">${titleName}</div></div></div>
+      <div class="columns">
+            <div class="column is-12">
+              <article class="message is-dark">
+                <div class="message-header"> Dash </div>
+                <div id="messageBody" class="message-body" style="position: relative;">
+                    <table class="table is-fullwidth is-striped">
+                        <tbody id="workordersTableBody">
+                        </tbody>
+                    </table>
+                </div>
+              </article>
+            </div>
+      </div>
+    `;
+	workorders.data.forEach(workorder => renderWorkorder(workorder))
 }
 
 function renderWorkorder(workorder){
-  const listItem = document.createElement('li')
+  const tableRow = document.createElement('tr')
   const editBtn = document.createElement("button")
-  const workorderList = document.querySelector('section.parentContainer ul')
+  const workorderTable = document.querySelector('workordersTable')
+
   editBtn.innerText = "Edit";
-  listItem.innerHTML = `${workorder.date} <br> ${workorder.customer.name} <br> ${workorder.aircraft.model}`;
-  listItem.append(editBtn);
-  listItem.className = 'col-2 correct'
+  tableRow.innerHTML = `${workorder.date} <br> ${workorder.customer.name} <br> ${workorder.aircraft.model}`;
+  tableRow.append(editBtn);
+
   editBtn.addEventListener("click", function(event) {
       activeWorkorder = workorder.id;
       workorderForm.name.value = workorder.name;
@@ -89,13 +115,43 @@ function renderHangar(){
 
 // ========================================================================
 // AIRCRAFTS
+function fetchAircrafts(){
+  fetch(`${BASE_URL}/aircrafts`, { method: "GET", headers: _headers})
+    .then(resp => resp.json())
+    .then(renderWorkorders)
+}
+function renderAircrafts(){
 
+}
+function renderAircraft(){
+
+}
 // ========================================================================
 // CUSTOMERS
+function fetchCustomers(){
+  fetch(`${BASE_URL}/hangars`, { method: "GET", headers: _headers})
+    .then(resp => resp.json())
+    .then(renderWorkorders)
+}
+function renderCustomers(){
 
+}
+function renderCustomer(){
+
+}
 // ========================================================================
 // SERVICES
+function fetchServices(){
+  fetch(`${BASE_URL}/hangars`, { method: "GET", headers: _headers})
+    .then(resp => resp.json())
+    .then(renderWorkorders)
+}
+function renderHangars(){
 
+}
+function renderHangar(){
+
+}
 // ========================================================================
 
 // ========================================================================
