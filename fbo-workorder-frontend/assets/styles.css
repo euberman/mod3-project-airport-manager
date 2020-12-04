@@ -15,29 +15,25 @@ html, body {
   Boarding Pass
   --------------------*/
 .wrapper { 
-	margin: 20px auto; padding: 0 20px; padding-top: 20px; 
-	max-width: 1000px; min-height: 900px; background-color: #e1e1e1;
-  border-radius: 12px;
+	margin: 20px auto; 
+	max-width: 1100px; min-height: 900px; background-color: #e1e1e1;
+  border-radius: 8px;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   text-transform: uppercase;
 }
 .row {display: flex;}
 header {
-  background: linear-gradient(to bottom, #52719c, #0b3681);
-  padding: 12px 20px;
-  color: #fff;
+  /* background: linear-gradient(to bottom, #314868, #1c53b3); */
+  padding: 20px 20px;
+  color: #fff; 
+}
+#parent-columns {height:100%;}
+.aside {
+  height: calc(100vh - 3rem);
+  overflow: hidden;
 }
 .bg-blue {background:blue;}
-#navList {
-  list-style: none;
-}
-#navList > li {
-  height: 40px;
-  flex: 1;
-  padding:10px;
-  text-align:center;
-}
 
 .text-left {text-align: left;}
 .text-right {text-align: right;}
