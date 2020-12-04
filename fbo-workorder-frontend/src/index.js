@@ -1,5 +1,5 @@
 const BASE_URL = "http://localhost:3000"
-const _headers = { "Content-Type": "application/json", Accept: "application/json" }
+const _headers = { 'Access-Control-Allow-Origin', "Content-Type": "application/json", Accept: "application/json" }
 let parentContainer;
 let activeWorkorder;
 // ========================================================================

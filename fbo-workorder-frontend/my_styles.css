@@ -2,19 +2,49 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:600");
 * {margin: 0; padding: 0; box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
-html, body {height: 100%; margin:40px; background: #f1f1f1; color: #333; 
-  font: 16px/1 'Open Sans', sans-serif; }
-
+html, body {
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(ellipse farthest-corner at center top, #ececec, #999);
+    color: #363c44;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+}
+  
+  /*--------------------
+  Boarding Pass
+  --------------------*/
 .wrapper { 
 	margin: 20px auto; padding: 0 20px; padding-top: 20px; 
-	max-width: 1000px; min-height: 900px; background-color: #e1e1e1; border-radius: 5px; 
+	max-width: 1000px; min-height: 900px; background-color: #e1e1e1;
+  border-radius: 12px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-transform: uppercase;
 }
-header { padding:10px;}
+header {
+  background: linear-gradient(to bottom, #36475f, #2c394f);
+  padding: 12px 20px;
+  height: 90px;
+}
+.header-left {
+  font-size: 18px;
+  float: left;
+  color: #fff;
+  width: 300px;
+  height: 40px;
+}
+
+.header-right {
+  float: right;
+  color: #fff;
+  text-align: right;
+}
 #navList {
   list-style: none;
 }
 #navList > li {
-  height: 40px;
+  height: 30px;
   flex: 1;
   padding:10px;
   text-align:center;
