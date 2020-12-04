@@ -1,12 +1,13 @@
 const BASE_URL = "http://localhost:3000"
-const _headers = { 'Access-Control-Allow-Origin', "Content-Type": "application/json", Accept: "application/json" }
+const _headers = { "Content-Type": "application/json", Accept: "application/json" } //'Access-Control-Allow-Origin', 
 let mainContainer;
 let activeWorkorder;
 // ========================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
   mainContainer = document.getElementById('main-container')
-  fetchWorkorders()
+  renderDashboard()
+  // fetchWorkorders()
   linkNavButtons()
 });
 
@@ -35,14 +36,13 @@ function renderDashboard(){
       <div class="columns is-multiline">
             <div class="column is-12">
               <article class="message is-dark">
-                <div class="message-header"> Chart </div>
+                <div class="message-header"> Dash </div>
                 <div class="message-body" style="position: relative;"></div>
               </article>
             </div>
       </div>
     `;
-  mainContainer.append(dashboardTemplate);
-
+  mainContainer.innerHTML = dashboardTemplate;
 }
 
 // ========================================================================

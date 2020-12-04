@@ -20,7 +20,7 @@ html, body {
   border-radius: 8px;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  text-transform: uppercase;
+  
 }
 .row {display: flex;}
 header {
@@ -32,6 +32,7 @@ header {
 .aside {
   height: calc(100vh - 3rem);
   overflow: hidden;
+  text-transform: uppercase;
 }
 .bg-blue {background:blue;}
 
