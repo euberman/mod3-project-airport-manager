@@ -996,3 +996,1772 @@ Processing by WorkordersController#index as JSON
 Completed 200 OK in 52ms (Views: 47.4ms | ActiveRecord: 3.7ms)
 
 
+Started GET "/workorders" for ::1 at 2020-12-04 18:45:16 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ericuberman/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.6ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.5ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.6ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 56ms (Views: 49.9ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-04 18:46:28 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-05 11:19:15 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.4ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.4ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.7ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 22ms (Views: 18.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-05 11:19:17 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.0ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 13:40:02 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ericuberman/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.7ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.6ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.7ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 71ms (Views: 62.7ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 13:49:00 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.2ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.2ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 13:50:24 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 13:56:00 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 13:57:17 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 14:00:25 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 14:03:00 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 14:03:20 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 14:03:50 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-06 14:36:28 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ericuberman/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ericuberman/.rvm/gems/ruby-2.6.1/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ericuberman/.rvm/gems/ruby-2.6.1/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 14:36:36 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 47ms (Views: 43.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 14:38:15 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 15:15:42 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.4ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.4ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.7ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 20ms (Views: 16.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 15:16:16 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 15:16:19 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/hangars" for ::1 at 2020-12-06 15:16:24 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/hangars"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/workorders" for ::1 at 2020-12-06 15:16:26 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-12-06 17:17:12 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ericuberman/.rvm/gems/ruby-2.6.1/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ericuberman/.rvm/gems/ruby-2.6.1/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 17:17:18 -0600
+Processing by WorkordersController#index as HTML
+  [1m[36mWorkorder Load (0.2ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 17:38:03 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 19:00:44 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.5ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.4ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.6ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/customers/" for ::1 at 2020-12-06 19:00:48 -0600
+Processing by CustomersController#index as JSON
+  Parameters: {"customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.5ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 2]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 4]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 5]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/controllers/customers_controller.rb:6
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 19:03:30 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 19:04:36 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 19:05:08 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/customers" for ::1 at 2020-12-06 19:16:28 -0600
+Processing by CustomersController#index as JSON
+  Parameters: {"customer"=>{}}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 2]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 4]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 5]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/controllers/customers_controller.rb:6
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 19:17:02 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.2ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/customers" for ::1 at 2020-12-06 19:17:04 -0600
+Processing by CustomersController#index as JSON
+  Parameters: {"customer"=>{}}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.2ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 2]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 4]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 5]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/controllers/customers_controller.rb:6
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 19:17:55 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/customers" for ::1 at 2020-12-06 19:18:02 -0600
+Processing by CustomersController#index as JSON
+  Parameters: {"customer"=>{}}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 2]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 4]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 5]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/controllers/customers_controller.rb:6
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 19:18:29 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/workorders" for ::1 at 2020-12-06 19:21:01 -0600
+Processing by WorkordersController#index as JSON
+  Parameters: {"workorder"=>{}}
+  [1m[36mWorkorder Load (0.1ms)[0m  [1m[34mSELECT "workorders".* FROM "workorders"[0m
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT  "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 1]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 2]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.2ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 3]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 4]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 5]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 6]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 7]]
+  ↳ app/controllers/workorders_controller.rb:7
+  [1m[36mServiceItem Load (0.1ms)[0m  [1m[34mSELECT "service_items".* FROM "service_items" WHERE "service_items"."workorder_id" = ?[0m  [["workorder_id", 8]]
+  ↳ app/controllers/workorders_controller.rb:7
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/customers" for ::1 at 2020-12-06 19:21:07 -0600
+Processing by CustomersController#index as JSON
+  Parameters: {"customer"=>{}}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 2]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 4]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 5]]
+  ↳ app/controllers/customers_controller.rb:6
+  [1m[36mAircraft Load (0.1ms)[0m  [1m[34mSELECT "aircrafts".* FROM "aircrafts" WHERE "aircrafts"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/controllers/customers_controller.rb:6
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.6ms)
+
+
