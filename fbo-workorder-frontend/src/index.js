@@ -1,29 +1,33 @@
 const BASE_URL = "http://localhost:3000"
-const _headers = {"Access-Control-Allow-Origin":"http://localhost:8000/",  "Content-Type": "application/json", Accept: "application/json" } //'Access-Control-Allow-Origin', 
+/* const _headers = {"Access-Control-Allow-Origin":"http://localhost:8000/",  "Content-Type": "application/json", Accept: "application/json" } */
+const _headers = {"Content-Type": "application/json"} //'Access-Control-Allow-Origin', 
 let mainContainer;
 let activeWorkorder;
 // ========================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
   mainContainer = document.getElementById('main-container')
-  renderDashboard()
+  showDashboard()
   // fetchWorkorders()
   linkNavButtons()
+  fetchWorkorders()
+  fetchCustomers()
+  fetchServices()
 });
 
 function linkNavButtons(){
   const dashboardBtn = document.getElementById('dashboardLink')
-    dashboardBtn.addEventListener('click', renderDashboard)
+    dashboardBtn.addEventListener('click', showDashboard)
   const workordersBtn = document.getElementById('workordersLink')
-  workordersBtn.addEventListener('click', fetchWorkorders)
+    workordersBtn.addEventListener('click', showWorkordersList)
   const servicesBtn = document.getElementById('servicesLink')
-  servicesBtn.addEventListener('click', fetchServices)
+    servicesBtn.addEventListener('click', showServicesList)
   const customersBtn = document.getElementById('customersLink')
-  customersBtn.addEventListener('click', fetchCustomers)
+    customersBtn.addEventListener('click', showCustomersList)
 }
 // ========================================================================
 // DASHBOARD
-function renderDashboard(){
+function showDashboard(){
   mainContainer.innerHTML = '';
   let dashboardTemplate = `
       <div class="level mt-2 mr-2 content-title"><div class="level-left"><div class="level-item title">Dashboard</div></div></div>
@@ -37,7 +41,9 @@ function renderDashboard(){
             <div class="column is-12">
               <article class="message is-dark">
                 <div class="message-header"> Dash </div>
-                <div id="messageBody" class="message-body" style="position: relative;"></div>
+                <div id="messageBody" class="message-body" style="position: relative;">
+                
+                </div>
               </article>
             </div>
       </div>
@@ -48,11 +54,3 @@ function renderDashboard(){
 // ========================================================================
 
 // ========================================================================
-
-/*
-document.getElementById()
-document.getElementsByClassName()
-document.getElementsByTagName()
-document.querySelector();			// returns first element
-document.querySelectorAll();		// returns NodeList
-*/
