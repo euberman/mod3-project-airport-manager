@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2020_12_01_180828) do
     t.datetime "date"
     t.integer "customer_id"
     t.integer "aircraft_id"
+    t.string "hangar_id", default: "2"
+    t.boolean "arrivingToday", default: false
     t.boolean "completed", default: false
     t.string "work_status", default: "scheduled"
     t.datetime "created_at", null: false

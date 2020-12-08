@@ -5,6 +5,8 @@ class CreateWorkorders < ActiveRecord::Migration[5.2]
       t.references :customer, foreign_key: true
       t.references :aircraft, foreign_key: true
 
+      t.string :hangar_id, default: 2
+      t.boolean :arrivingToday, default: false
       t.boolean :completed, default: false
       t.string :work_status, default: 'scheduled' 
 

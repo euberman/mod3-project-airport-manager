@@ -1,91 +1,92 @@
 const BASE_URL = "http://localhost:3000"
-const _headers = { "Content-Type": "application/json", Accept: "application/json" }
-let parentContainer;
+/* const _headers = {"Access-Control-Allow-Origin":"http://localhost:8000/",  "Content-Type": "application/json", Accept: "application/json" } */
+const _headers = {"Content-Type": "application/json", Accept: "application/json"} //'Access-Control-Allow-Origin', 
+let mainContainer;
 let activeWorkorder;
 // ========================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  parentContainer = document.getElementById('parentContainer')
-  fetchWorkorders()
-  linkNavButtons()
+    
+    mainContainer = document.getElementById('main-container')
+    fetchWorkorders()
+    linkNavButtons()
+    showDashboard()
+    fetchServiceItems()
+    fetchCustomers()
+    fetchServices()
 });
 
 function linkNavButtons(){
   const dashboardBtn = document.getElementById('dashboardLink')
-    dashboardBtn.addEventListener('click', renderDashboard)
+    dashboardBtn.addEventListener('click', showDashboard)
   const workordersBtn = document.getElementById('workordersLink')
-  workordersBtn.addEventListener('click', renderDashboard)
+    workordersBtn.addEventListener('click', showWorkordersList)
   const servicesBtn = document.getElementById('servicesLink')
-  servicesBtn.addEventListener('click', renderDashboard)
+    servicesBtn.addEventListener('click', showServicesList)
   const customersBtn = document.getElementById('customersLink')
-  customersBtn.addEventListener('click', renderDashboard)
+    customersBtn.addEventListener('click', showCustomersList)
 }
 // ========================================================================
 // DASHBOARD
-function renderDashboard(){
-  parentContainer.innerHTML = '';
+function showDashboard(){
+    mainContainer.innerHTML = '';
+    mainContainer.innerHTML = dashboardHTML;
 
+    const arrivalListContainer = document.getElementById('arrivalListContainer');
+    const arrivalList = document.createElement('ol')
+
+    console.dir(workordersCollection)
+
+    let arrivalFlights = workordersCollection.filter(workorder => { 
+      return workorder["attributes"].arrivingToday
+    })
+
+    if (arrivalFlights.length > 0){
+      arrivalListContainer.appendChild(arrivalList)
+      arrivalFlights.forEach(flight => {
+        let listItem = document.createElement('li')
+        let arrivalDate = convertISODatetoLocal(flight.date)
+        listItem.innerHTML = `<div class="level p-4 ">
+        <div class="level-left">
+          <div class="level-item">
+            <p class="subtitle is-5">
+            <strong>Customer:</strong> ${flight['attributes']['customer'].name} <br>
+            <strong>Aircraft Model: </strong> ${flight['attributes']['aircraft'].model}
+            </p>
+          </div>
+        </div>
+    </div>
+              `;
+        arrivalList.appendChild(listItem)
+        listItem.addEventListener('click', function(e){
+          showWorkorderDetails(flight)
+        })
+      })
+      
+    } else {
+      arrivalListContainer.innerHTML = '<p>No Flight Arriving Today</p>'
+    }
+}
+
+function convertISODatetoLocal(date){
+  let d = Date.parse(date)
+  let b = new Date(d)
+  return b.toLocaleString();
+}
+
+function renderListChildren(parent, ...items) {
+  const ul = document.createElement('ul')
+  for (const [i, val] of listItems) {
+    let li = document.createElement('li')
+    li.innerHTML = `<strong>Customer:</strong>`
+    ul.appendChild(li)
+    li.addEventListener('click', function(e){
+      showWorkorderDetails(val)
+    })
+  }
+  return parent.appendChild(ul);
 }
 
 // ========================================================================
-// WORKORDERS
-function fectchWorkorders(){
-  fetch(`${BASE_URL}/workorders`, { method: "GET", headers: _headers})
-    .then(resp => resp.json())
-    .then(renderWorkorders)
-}
-function renderWorkorders(workorders){
-  parentContainer.innerHTML = "<ul class='row'></ul>";
-	workorders.forEach(workorder => renderWorkorder(workorder))
-}
-
-function renderWorkorder(workorder){
-  const listItem = document.createElement('li')
-  const editBtn = document.createElement("button")
-  const workorderList = document.querySelector('section.parentContainer ul')
-  editBtn.innerText = "Edit";
-  listItem.innerHTML = `${workorder.date} <br> ${workorder.customer.name} <br> ${workorder.aircraft.model}`;
-  listItem.append(editBtn);
-  listItem.className = 'col-2 correct'
-  editBtn.addEventListener("click", function(event) {
-      activeWorkorder = workorder.id;
-      workorderForm.name.value = workorder.name;
-      workorderForm.breed.value = workorder.breed;
-      workorderForm.sex.value = workorder.sex;
-  });
-}
 
 // ========================================================================
-// HANGARS
-function fetchHangars(){
-  fetch(`${BASE_URL}/hangars`, { method: "GET", headers: _headers})
-    .then(resp => resp.json())
-    .then(renderWorkorders)
-}
-function renderHangars(){
-
-}
-function renderHangar(){
-
-}
-
-// ========================================================================
-// AIRCRAFTS
-
-// ========================================================================
-// CUSTOMERS
-
-// ========================================================================
-// SERVICES
-
-// ========================================================================
-
-// ========================================================================
-
-/*
-document.getElementById()
-document.getElementsByClassName()
-document.getElementsByTagName()
-document.querySelector();			// returns first element
-document.querySelectorAll();		// returns NodeList
-*/

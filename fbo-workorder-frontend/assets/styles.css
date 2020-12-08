@@ -1,0 +1,85 @@
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600");
+* {margin: 0; padding: 0; box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+html, body {
+    height: 100vh;
+    width:100vw;
+    margin: 0;
+    background: radial-gradient(ellipse farthest-corner at center top, #ececec, #999);
+    color: #363c44;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+}
+  
+  /*--------------------
+  Boarding Pass
+  --------------------*/
+.wrapper { 
+	margin: 20px auto; 
+	max-width: 1100px; min-height: 900px; background-color: #e1e1e1;
+  border-radius: 8px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.row {display: flex;}
+header {
+  /* background: linear-gradient(to bottom, #314868, #1c53b3); */
+  padding: 20px 20px;
+  color: #fff; 
+}
+#parent-columns {height:100%;}
+.aside {
+  height: calc(100vh - 3rem);
+  overflow: hidden;
+  text-transform: uppercase;
+}
+.bg-blue {background:blue;}
+
+.text-left {text-align: left;}
+.text-right {text-align: right;}
+h1 { font: 600 24px/1 'Open Sans', sans-serif; color: rgb(45, 45, 46); margin: 20px 0 30px 5px; }
+h2 { font: 600 20px/1 'Open Sans', sans-serif; color: #888; margin: 20px 0; }
+h3 { font: 600 17px/1 'Open Sans', sans-serif; color: #999; margin: 20px 0; }
+p { font: 14px/1 'Open Sans', sans-serif; color: #777; }
+
+.back-img { background-image: url(http://); height: 150px; background-size:cover; color: #fff; }/* Use on columns only! */
+
+.hidden-element {visibility: hidden;}
+.space-off, .space-off:last-child {margin-bottom: 0; }
+
+/* .blank-col {min-height: 150px; max-height: 150px; }
+.sticky {font: 600 20px/1 'Open Sans', sans-serif; top: 0; position:fixed; width: 100%; max-height: 150px; }
+.no-back { background-color: #f1f1f1; }
+
+.warn {background: #FFDB4D;}
+.note { background: #5CADFF;color: #fff; }
+.error { background: #FF5353; color: #fff; }
+.correct { background: #33D685; color: #fff; }
+.rounded {border-radius: 100px;} */
+
+
+
+/* 
+.row { display: flex; }
+
+[class*="col-"] {
+	min-height: 80px; text-align: center; 
+	background: #fff; box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px; margin-right: 20px; padding: 20px;
+}
+[class*="col-"]:last-child { margin-right: 0;}
+
+.col-1 {flex: 1;}
+.col-2 {flex: 2;}
+.col-3 {flex: 3;}
+.col-4 {flex: 4;}
+.col-5 {flex: 5;}
+.col-6 {flex: 6;}
+.col-7 {flex: 7;}
+.col-8 {flex: 8;}
+.col-9 {flex: 9;}
+.col-10 {flex: 10;}
+.col-11 {flex: 11;}
+.col-12 {flex: 12;} */
