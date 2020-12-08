@@ -8,7 +8,7 @@ let workordersCollection;
 /* Database methods ------------------------------------------------ */
 /* ================================================================= */
 function fetchWorkorders(){
-  fetch(`${BASE_URL}/workorders`, { method: "GET", mode:"cors", headers: _headers})
+  fetch(`${BASE_URL}/workorders`, { method: "GET", headers: _headers})
     .then(resp => resp.json())
     .then(json => {
       let data = json.data;
@@ -29,7 +29,7 @@ function saveWorkorder(data){
   fetchWorkorders()
 }
 
-function updateWorkorder(){
+function updateWorkorder(data){
   const config = { method: "PATCH", headers: _headers, body: JSON.stringify(data) }
   fetch(BASE_URL + '/workorders/' + currentWorkorderId, config)
     .then(resp => resp.json())
@@ -42,7 +42,7 @@ function updateWorkorder(){
 }
 
 function deleteWorkorder(){
-  fetch(BASE_URL + '/workorders/' + id, {
+  fetch(BASE_URL + '/workorders/' + currentWorkorderId, {
     method: "DELETE", 
     headers: {"Content-Type": "application/json"}
   })
@@ -96,46 +96,50 @@ function renderWorkorderListItem(workorder, tBody){
           editBtn.classList.add("button", "is-active");
           editBtn.setAttribute('data-id', workorder.id);
 
-    tableRow.innerHTML = `<td>${workorder["attributes"].date}</td>
-                        <td>${workorder["attributes"].customer.name}</td>
-                        <td>${workorder["attributes"].aircraft.model}</td>`;
-    tableRow.append(viewBtn, editBtn);
+    tableRow.innerHTML = `<td>${workorder["attributes"].date}</td>` +
+                        `<td>${workorder["attributes"].customer.name}</td>` +
+                        `<td>${workorder["attributes"].aircraft.model}</td>`;
 
-    viewBtn.addEventListener("click", function(event) {
+    tableRow.addEventListener("click", function(event) {
       showWorkorderDetails(workorder)
     });
+
+    // viewBtn.addEventListener("click", function(event) {
+    //   showWorkorderDetails(workorder)
+    // });
 
     tBody.append(tableRow);
 }
 
 function showWorkorderDetails(workorder){
-  currentWorkorderId = workorder.id;
-  mainContainer.innerHTML = " "
-  mainContainer.innerHTML = workorderDetailsHTML
-
-  let arrivalDate = workorder.date
-  const arrivalText = document.getElementById('woArrivalDate')
-        arrivalText.innerHTML = `<strong>Arrival Date:</strong> ${arrivalDate}`
-
-  const customerInfoText = document.getElementById('woCustomerInfo');
-  let aircraftContent = `Customer Id : ${workorder['attributes']['customer'].id} \n 
-                        Customer Name : ${workorder['attributes']['customer'].name}`;
-
-  const aircraftText = document.getElementById('woAircraftInfo');
-  aircraftText.innerHTML = `Model : ${workorder['attributes']['aircraft'].model}`
-   
-  const editBtn = document.getElementById('woEditBtn');
-  editBtn.addEventListener("click", function(event) {
     currentWorkorderId = workorder.id;
-    renderWorkorderForm(workorder)
-  });
-  const deleteBtn = document.getElementById('woDeleteBtn');
-  deleteBtn.addEventListener("click", function(event) {
-    currentWorkorderId = workorder.id;
-    console.log(`workorder-id = ${currentWorkorderId}`)
-    renderWorkorderForm(workorder)
-  });
+    mainContainer.innerHTML = " "
+    mainContainer.innerHTML = workorderDetailsHTML
+
+    const arrivalText = document.getElementById('woArrivalDate')
+          arrivalText.innerHTML = `<strong>Arrival Date:</strong> ${workorder.date}<br><br>`
+
+    const customerInfoText = document.getElementById('woCustomerInfo');
+    customerInfoText.innerHTML = `Customer Id : ${workorder['attributes']['customer'].id}<br>
+                          Customer Name : ${workorder['attributes']['customer'].name}`;
+
+    const aircraftText = document.getElementById('woAircraftInfo');
+    aircraftText.innerHTML = `Model : ${workorder['attributes']['aircraft'].model}`
+    
+    const editBtn = document.getElementById('woEditBtn');
+    editBtn.addEventListener("click", function(event) {
+      currentWorkorderId = workorder.id;
+      renderWorkorderForm(workorder)
+    });
+    const deleteBtn = document.getElementById('woDeleteBtn');
+    deleteBtn.addEventListener("click", function(event) {
+      currentWorkorderId = workorder.id;
+      console.log(`workorder-id = ${currentWorkorderId}`)
+      renderWorkorderForm(workorder)
+    });
 }
+
+
 
 /* ================================================================= */
 /* Form methods ---------------------------------------------------- */
@@ -151,11 +155,12 @@ function renderWorkorderForm(workorder){
         tileDiv.classList.add("tile")
   const form = document.createElement('form');
         form.id = 'workorderForm';
-        form.innerHTML = formTemplate;
+        form.innerHTML = workorderFormHTML;
+        form.style = "width:100%;"
   tileDiv.appendChild(form)
   parentTileDiv.appendChild(tileDiv)
   mainContainer.appendChild(parentTileDiv)
-  mainContainer.appendChild(form);
+  //mainContainer.appendChild(form);
 
   updateCustomerOptions(workorder)
 }

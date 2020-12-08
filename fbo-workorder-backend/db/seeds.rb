@@ -17,6 +17,9 @@ Aircraft.delete_all
 customer1 = Customer.create(name: 'Joey Thomas')
 customer2 = Customer.create(name: 'Tom Hudson')
 customer3 = Customer.create(name: 'Mark Cuban')
+customer4 = Customer.create(name: 'Luke Yound')
+customer5 = Customer.create(name: 'Luke Fritz')
+customer6 = Customer.create(name: 'Tyler Seguin')
 
 service1 = Service.create(name: 'Fuel Service', description: 'Aircraft is refuled with jet fuel')
 service2 = Service.create(name: 'Towing Service', description: 'Towing service to hangar from ramp and from hangar to ramp')
@@ -34,11 +37,17 @@ date1 = today + 1
 date2 = today + 2
 date3 = today + 3
 date4 = today + 4
+date5 = today
 
-workorder1 = Workorder.create(customer: customer1 , aircraft: aircraft1 , date: date1 )
-workorder2 = Workorder.create(customer: customer2 , aircraft: aircraft2 , date: date2 )
-workorder3 = Workorder.create(customer: customer3 , aircraft: aircraft3 , date: date3 )
-workorder4 = Workorder.create(customer: customer3 , aircraft: aircraft4 , date: date4 )
+workorder1 = Workorder.create(customer: customer1 , aircraft: aircraft1 , date: date1 , arrivingToday: false )
+workorder2 = Workorder.create(customer: customer2 , aircraft: aircraft2 , date: date2 , arrivingToday: false)
+workorder3 = Workorder.create(customer: customer3 , aircraft: aircraft3 , date: date3 , arrivingToday: false)
+workorder4 = Workorder.create(customer: customer3 , aircraft: aircraft4 , date: date5 , completed: true)
+
+workorder5 = Workorder.create(customer: customer4 , aircraft: aircraft1 , date: today , arrivingToday: true)
+workorder6 = Workorder.create(customer: customer5 , aircraft: aircraft2 , date: today , arrivingToday: true)
+workorder7 = Workorder.create(customer: customer5 , aircraft: aircraft3 , date: today , arrivingToday: true)
+workorder8 = Workorder.create(customer: customer6 , aircraft: aircraft4 , date: today , arrivingToday: true)
 
 serviceItem1 = ServiceItem.create(service: service1 , workorder: workorder1)
 serviceItem2 = ServiceItem.create(service: service2 , workorder: workorder1)
@@ -48,3 +57,12 @@ serviceItem5 = ServiceItem.create(service: service3 , workorder: workorder3)
 serviceItem6 = ServiceItem.create(service: service1 , workorder: workorder3)
 serviceItem7 = ServiceItem.create(service: service2 , workorder: workorder4)
 serviceItem8 = ServiceItem.create(service: service4 , workorder: workorder4)
+
+serviceItem9 = ServiceItem.create(service: service1 , workorder: workorder5)
+serviceItem10 = ServiceItem.create(service: service2 , workorder: workorder5)
+serviceItem11 = ServiceItem.create(service: service4 , workorder: workorder6)
+serviceItem12 = ServiceItem.create(service: service5 , workorder: workorder6)
+serviceItem13 = ServiceItem.create(service: service3 , workorder: workorder7)
+serviceItem14 = ServiceItem.create(service: service1 , workorder: workorder7)
+serviceItem15 = ServiceItem.create(service: service2 , workorder: workorder8)
+serviceItem16 = ServiceItem.create(service: service4 , workorder: workorder8)

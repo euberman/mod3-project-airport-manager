@@ -1,6 +1,6 @@
 class WorkorderSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :date, :completed, :work_status, :customer, :aircraft, :service_items
+  attributes :date, :completed, :arrivingToday, :work_status, :customer, :aircraft, :service_items
 end
 
 # create_table "workorders", force: :cascade do |t|

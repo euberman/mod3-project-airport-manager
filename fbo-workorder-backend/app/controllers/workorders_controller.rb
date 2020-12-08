@@ -19,17 +19,28 @@ class WorkordersController < ApplicationController
     end
   end
 
-  # create_table "workorders", force: :cascade do |t|
-  #   t.datetime "date"
-  #   t.integer "customer_id"
-  #   t.integer "aircraft_id"
-  #   t.boolean "completed", default: false
-  #   t.string "work_status", default: "scheduled"
-  #   t.datetime "created_at", null: false
-  #   t.datetime "updated_at", null: false
-  #   t.index ["aircraft_id"], name: "index_workorders_on_aircraft_id"
-  #   t.index ["customer_id"], name: "index_workorders_on_customer_id"
-  # end
+  def create 
+    workorder = Workorder.create(workorder_params)
+    render json: WorkorderSerializer.new(workorder)
+  end
+
+  def update
+    workorder = Workorder.find(params[:id])
+    workorder.update(workorder_params)
+    render json: WorkorderSerializer.new(workorder)
+  end
+
+  def destroy 
+    workorder = Workorder.find(params[:id])
+    workorder.destroy()
+  end
+
+  private
+
+  def workorder_params 
+    params.require(:workorder).permit(:date, :customer_id, :aircraft_id, :hangar_id, :arrivingToday, :completed, :work_status)
+  end
+
 
 # ==================================================================
 # Methods using only Rails
@@ -37,7 +48,7 @@ class WorkordersController < ApplicationController
   #     workorders = Workorder.all
   #     if workorders
   #       render json: workorders.to_json(:include => {
-  #         :customer => {:only => [:name]}, 
+  #         :workorder => {:only => [:name]}, 
   #         :aircraft => {:only => [:model]}
   #       }, :except => [:updated_at])
   #     else 
@@ -49,7 +60,7 @@ class WorkordersController < ApplicationController
   #     workorder = Workorder.find_by(id: params[:id])
   #     if workorder
   #       render json: workorder.to_json(:include => {
-  #         :customer => {:only => [:name]}, 
+  #         :workorder => {:only => [:name]}, 
   #         :aircraft => {:only => [:model]} #,:service_items
   #       }, :except => [:updated_at])
   #     else 

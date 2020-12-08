@@ -16,6 +16,24 @@ Parent Container =>
         </div>
       </div>`;
 */
+const dashboardHTML = `
+      <div class="tile is-ancestor p-5">
+          <div class="tile is-vertical is-parent">
+              <div class="tile is-child box has-background-info-dark">
+                  <div class="level ">
+                      <div class="level-left">
+                        <div class="level-item">
+                          <p class="subtitle is-5 has-text-white">
+                            <strong>Flights Arriving Today:</strong>
+                          </p>
+                        </div>
+                      </div>
+                  </div>
+                  <div id="arrivalListContainer" class="has-background-light" ></div>
+              </div>
+          </div>
+      </div>`;
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Workorder Details
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

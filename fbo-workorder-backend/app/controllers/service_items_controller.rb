@@ -1,19 +1,42 @@
 class ServiceItemsController < ApplicationController
   def index
-    serviceItems = ServiceItem.all
-    if serviceItems
-      render json: ServiceItemSerializer.new(serviceItems)
+    service_items = ServiceItem.all
+    if service_items
+      render json: ServiceItemSerializer.new(service_items)
     else 
-      render json: {message: 'No serviceItems found'}
+      render json: {message: 'No service_items found'}
     end
   end
 
   def show
-    serviceItem = ServiceItem.find_by(id: params[:id])
-    if serviceItem
-      render json: ServiceItemSerializer.new(serviceItem)
+    service_item = ServiceItem.find_by(id: params[:id])
+    if service_item
+      render json: ServiceItemSerializer.new(service_item)
     else 
-      render json: {message: 'No serviceItem found with that id'}
+      render json: {message: 'No service_item found with that id'}
     end
   end
+
+  def create 
+    service_item = ServiceItem.create(service_item_params)
+    render json: ServiceItemSerializer.new(service_item)
+  end
+
+  def update
+    service_item = ServiceItem.find(params[:id])
+    service_item.update(service_item_params)
+    render json: ServiceItemSerializer.new(service_item)
+  end
+
+  def destroy 
+    service_item = ServiceItem.find(params[:id])
+    service_item.destroy()
+  end
+
+  private
+
+  def service_item_params 
+    params.require(:service_item).permit(:date, :customer_id, :aircraft_id, :hangar_id, :arrivingToday, :completed, :work_status)
+  end
+
 end
