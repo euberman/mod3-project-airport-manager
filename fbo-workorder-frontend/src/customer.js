@@ -12,8 +12,9 @@
 //       console.dir(json['data'][0]['attributes']['name']);
 //     })
 
+let currentCustomerId;
 // easy customers reference
-let customersCollection = []
+let customersCollection = [];
 
 
 function fetchCustomers(){
@@ -29,7 +30,7 @@ function showCustomersList(){
 
 }
 function renderCustomer(){
-
+  
 }
 
 class Customer {
@@ -55,12 +56,13 @@ class Customer {
     fetch(`${BASE_URL}/customers`, { method: "GET", headers: _headers})
       .then(resp => resp.json())
       .then(json => {
-        return json;
+        let data = json.data
+        customersCollection = data
       })
   }
 
-  save(data){
-    const configObject = { method: "POST", mode:"cors", headers: _headers, body: JSON.stringify(data)}
+  saveCustomer(data){
+    const configObject = { method: "POST", headers: _headers, body: JSON.stringify(data)}
     fetch(`${BASE_URL}/customers`, configObject)
       .then(resp => resp.json())
       .then(json => {
@@ -70,8 +72,8 @@ class Customer {
       })
   }
 
-  update(data){
-    const configObject = { method: "PATCH", mode:"cors", headers: _headers, body: JSON.stringify(data)}
+  updateCustomer(data){
+    const configObject = { method: "PATCH", headers: _headers, body: JSON.stringify(data)}
     fetch(`${BASE_URL}/customers/${currentCustomerId}`, configObject)
       .then(resp => resp.json())
       .then(json => {

@@ -75,3 +75,4 @@ fbo-workorder-backend/log/development.log
 fbo-workorder-backend/tmp/cache/bootsnap-compile-cache/66/c35b29f178e8aa
 fbo-workorder-backend/tmp/cache/bootsnap-load-path-cache
 fbo-workorder-backend/log/development.log
+fbo-workorder-backend/db/development.sqlite3

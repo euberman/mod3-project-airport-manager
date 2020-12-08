@@ -16,37 +16,39 @@ function fetchWorkorders(){
       workordersCollection = data;
     })
 }
-// for new workorders
+
 function saveWorkorder(data){
-  const saveHeaders = { method: "POST", headers: _headers, body: JSON.stringify(data) }
-  const updateHeaders = { method: "POST", headers: _headers, body: JSON.stringify(data) }
-  if (currentWorkorderId === 0) {
-    fetch(BASE_URL + '/workorders', saveHeaders)
-      .then(resp => resp.json())
-      .then(json => {
-        let newData = json.data;
-        console.log('New Workorder was saved')
-        console.dir(newData)
-      })
-  } else {
-    fetch(BASE_URL + '/workorders/' + currentWorkorderId, updateHeaders)
+  const config = { method: "POST", headers: _headers, body: JSON.stringify(data) }
+  fetch(BASE_URL + '/workorders', config)
+    .then(resp => resp.json())
+    .then(json => {
+      let newData = json.data;
+      console.log('New Workorder was saved')
+      console.dir(newData)
+    })
+  fetchWorkorders()
+}
+
+function updateWorkorder(){
+  const config = { method: "PATCH", headers: _headers, body: JSON.stringify(data) }
+  fetch(BASE_URL + '/workorders/' + currentWorkorderId, config)
     .then(resp => resp.json())
     .then(json => {
       let newData = json.data;
       console.log('Workorder was updated')
       console.dir(newData)
     })
-  }
   fetchWorkorders()
 }
 
 function deleteWorkorder(){
-  console.log("deleted from db")
   fetch(BASE_URL + '/workorders/' + id, {
     method: "DELETE", 
     headers: {"Content-Type": "application/json"}
   })
+  console.log("deleted from db")
   fetchWorkorders()
+  showWorkordersList()
 }
 
 /* ================================================================= */
@@ -80,10 +82,10 @@ function showWorkordersList(){
       mainContainer.append(titleDiv)
       mainContainer.append(contentDiv)
     const tBody = document.getElementById('workordersTableBody');
-    workordersCollection.forEach(workorder => renderWorkorder(workorder, tBody))
+    workordersCollection.forEach(workorder => renderWorkorderListItem(workorder, tBody))
 }
 
-function renderWorkorder(workorder, tBody){
+function renderWorkorderListItem(workorder, tBody){
     const tableRow = document.createElement('tr')
     const viewBtn = document.createElement("button")
           viewBtn.innerText = "View";
@@ -100,21 +102,39 @@ function renderWorkorder(workorder, tBody){
     tableRow.append(viewBtn, editBtn);
 
     viewBtn.addEventListener("click", function(event) {
-      currentWorkorderId = workorder.id;
-      console.log(`workorder-id = ${currentWorkorderId}`)
-      renderWorkorderDetails(workorder)
+      showWorkorderDetails(workorder)
     });
 
-    editBtn.addEventListener("click", function(event) {
-      currentWorkorderId = workorder.id;
-      console.log(`workorder-id = ${currentWorkorderId}`)
-      renderWorkorderForm(workorder)
-    });
     tBody.append(tableRow);
 }
 
-function renderWorkorderDetails(workorder){
+function showWorkorderDetails(workorder){
+  currentWorkorderId = workorder.id;
+  mainContainer.innerHTML = " "
+  mainContainer.innerHTML = workorderDetailsHTML
 
+  let arrivalDate = workorder.date
+  const arrivalText = document.getElementById('woArrivalDate')
+        arrivalText.innerHTML = `<strong>Arrival Date:</strong> ${arrivalDate}`
+
+  const customerInfoText = document.getElementById('woCustomerInfo');
+  let aircraftContent = `Customer Id : ${workorder['attributes']['customer'].id} \n 
+                        Customer Name : ${workorder['attributes']['customer'].name}`;
+
+  const aircraftText = document.getElementById('woAircraftInfo');
+  aircraftText.innerHTML = `Model : ${workorder['attributes']['aircraft'].model}`
+   
+  const editBtn = document.getElementById('woEditBtn');
+  editBtn.addEventListener("click", function(event) {
+    currentWorkorderId = workorder.id;
+    renderWorkorderForm(workorder)
+  });
+  const deleteBtn = document.getElementById('woDeleteBtn');
+  deleteBtn.addEventListener("click", function(event) {
+    currentWorkorderId = workorder.id;
+    console.log(`workorder-id = ${currentWorkorderId}`)
+    renderWorkorderForm(workorder)
+  });
 }
 
 /* ================================================================= */
@@ -122,99 +142,70 @@ function renderWorkorderDetails(workorder){
 /* ================================================================= */
 function renderWorkorderForm(workorder){
   mainContainer.innerHTML = " ";
-  let form = buildWorkorderForm()
-  // currentWorkorderId = workorder.id;
-  // form.customerId.value = workorder['attributes']['customer'].id;
-  // form.aircraftId.value = workorder['attributes']['aircraft'].id;
-
-  form.customerName.value = "Eric Uberman";
-  form.aircraftModel.value = "Gulfstream G20";
+  if (workorder) {
+    currentWorkorderId = workorder.id
+  }
+  const parentTileDiv = document.createElement('div')
+        parentTileDiv.classList.add("tile", "is-ancestor")
+  const tileDiv = document.createElement('div')
+        tileDiv.classList.add("tile")
+  const form = document.createElement('form');
+        form.id = 'workorderForm';
+        form.innerHTML = formTemplate;
+  tileDiv.appendChild(form)
+  parentTileDiv.appendChild(tileDiv)
+  mainContainer.appendChild(parentTileDiv)
   mainContainer.appendChild(form);
+
+  updateCustomerOptions(workorder)
 }
 
-function buildCustomerSelectField(){
-  const selectField = document.createElement('select');
-        selectField.name = 'customerId';
-        selectField.id = 'customerSelectField';
-  // let json = fetchCustomers();
-  // let customers = json["data"];
-  // console.log('customers #buildCustomerSelectField:')
-  // console.dir(customers)
-  customersCollection.forEach(customer => {
-    let customerOption = new Option(customer["attributes"]["name"], customer.id);
-    selectField.options.add(customerOption);
-  })
-  console.log('selectField return value:')
-  console.dir(selectField)
-  return selectField;
-  // let selectFieldLiteral = "<select id='customerSelectField' name='customerId'>";
-  // customers.forEach(customer => { selectFieldLiteral += `<option value=${customers[i].id}>customers[i]["attributes"]["name"]</option>`; })
-  // selectFieldLiteral += `</select>`;
-  //return selectFieldLiteral;
+function updateCustomerOptions(workorder){
+    const selectField = document.getElementById('customerId');
+    customersCollection.forEach(customer => {
+      let option = new Option(customer['attributes'].name , customer.id);
+      selectField.options.add(option);
+    })
+    console.log('selectField was updated value:')
+    console.dir(selectField.outerHTML)
+
+    selectField.addEventListener('change', (event) => {
+      const customerId = event.target.value
+      updateAircraftOptions(customerId, workorder)
+    });
 }
 
+function updateAircraftOptions(customerId, workorder){
+    const selectField = document.getElementById('aircraftId');
+    const customer = customersCollection.find(customer => customer.id === customerId)
+    const aircrafts = customer["attributes"]["aircrafts"]
 
-function buildWorkorderForm(){
-    const form = document.createElement('form');
-    let customerSelectField = buildCustomerSelectField();
-    form.id = 'workorderForm';
-    let formTemplate = `<div class="field">
-      <label class="label">Customer Name:</label>
-          <div class="control"> <input class="input" name="customerName" type="text" placeholder="Customer Name" required> </div>
-      </div>
-
-      <div class="field">
-          <label class="label">Aircraft Model:</label>
-          <div class="control"> <input class="input" name="aircraftModel" type="text" placeholder="Aircraft Model" required> </div>
-      </div>
-
-      <div lass="field">
-          <label class="checkbox"><input type="checkbox"/>Completed </label>
-      </div>
-
-      ${ customerSelectField }
-      
-      <div class="field">
-          <label class="label">Hangar Location:</label>
-          <div class="control">
-            <div class="select">
-            <select name="hangar_id">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-            </div>
-          </div>
-      </div>
-
-      <div class="field is-grouped">
-      <div class="control"><button id="submitBtn" class="button is-link">Submit</button></div>
-      <div class="control"><button id="cancalBtn" class="button is-link is-light">Cancel</button></div>
-      </div>`;
-    form.innerHTML = formTemplate;
-    return form;
+    aircrafts.forEach(aircraft => {
+      let option = new Option(aircraft.model , aircraft.id);
+      selectField.options.add(option);
+    })
+    console.log('selectField was updated value:')
+    console.dir(selectField.outerHTML)
 }
-
 
 function handleWorkorderFormSubmit(e){
-  e.preventDefault()
-  const form = e.target;
-  let data = {
-    "customer_id": form.customerId.value
-  }
+    e.preventDefault()
+    const form = e.target;
+    let data = {
+      date : form.date.value,
+      customer_id : form.customerId.value,
+      aircraft_id : form.aircraftId.value,
+      completed : form.completed.value
+    }
 
-  const configObject = { method: "PATCH", mode:"cors", headers: _headers, body: JSON.stringify(data)}
-  fetch(`${BASE_URL}/workorders/${currentWorkorderId}`, configObject)
-    .then(resp => resp.json())
-    .then(json => {
-      alert('Workorder was updated successfully')
-      console.dir(json);
-      showWorkordersList(json["data"])
-    })
-
-  // const modal = document.querySelector('#workorderFormModal')
-  // modal.classList.toggle('is-active')
+    const configObject = { method: "PATCH", mode:"cors", headers: _headers, body: JSON.stringify(data)}
+    fetch(`${BASE_URL}/workorders/${currentWorkorderId}`, configObject)
+      .then(resp => resp.json())
+      .then(json => {
+        alert('Workorder was updated successfully')
+        console.dir(json);
+        showWorkordersList(json["data"])
+      })
 }
 
 // function renderWorkorderForm(workorder){

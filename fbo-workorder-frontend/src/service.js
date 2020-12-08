@@ -6,9 +6,7 @@ let servicesCollection;
 /* ================================================================= */
 /* Database methods ------------------------------------------------ */
 /* ================================================================= */
-function showServicesList(){
 
-}
 
 function fetchServices(){
   fetch(`${BASE_URL}/services`, { method: "GET", headers: _headers})
@@ -22,9 +20,11 @@ function fetchServices(){
 /* ================================================================= */
 /* Render methods -------------------------------------------------- */
 /* ================================================================= */
-function renderHangars(){
+
+function showServicesList(){
 
 }
-function renderHangar(){
 
+function getServiceNames(){
+  servicesCollection.map(service => service.attributes.name)
 }
